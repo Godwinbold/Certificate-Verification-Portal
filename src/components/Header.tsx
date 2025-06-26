@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plane, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const Header: React.FC = () => {
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Company Name */}
           <div className="flex items-center space-x-2">
-            <Plane className="w-8 h-8 text-blue-600" />
+            <img src="/logo.jpg" alt="GHI Assets Limited Logo" className="w-8 h-8" />
             <span className="text-xl font-bold text-gray-900">GHI Assets Limited</span>
           </div>
           
