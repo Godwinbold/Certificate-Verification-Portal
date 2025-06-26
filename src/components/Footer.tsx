@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+234 (70) 56739055</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4" />
@@ -51,8 +51,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 mt-1" />
                 <span>
-                  123 Aviation Boulevard<br />
-                  Sky City, SC 12345
+                  45, Oduduwa Way<br />
+                  Ikeja GRA
                 </span>
               </div>
             </div>
