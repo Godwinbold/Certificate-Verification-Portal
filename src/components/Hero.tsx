@@ -4,8 +4,27 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Plane, Star, Users, Globe } from 'lucide-react';
 import { useState } from 'react';
 
+const blinkStyle = {
+  animation: 'colorBlink 1.2s infinite'
+};
+
+const keyframes = `
+@keyframes colorBlink {
+  0%, 50% { background-color: rgb(254 240 138); }
+  25%, 75% { background-color: rgb(165 243 252); }
+}
+`;
+
 const Hero: React.FC = () => {
   const [showVerificationCard, setShowVerificationCard] = useState(false);
+  
+  React.useEffect(() => {
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = keyframes;
+    document.head.appendChild(styleSheet);
+    return () => document.head.removeChild(styleSheet);
+  }, []);
+  
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
       {/* Background Pattern */}
@@ -37,7 +56,8 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 size="lg" 
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4"
+                className="hover:bg-yellow-600 text-black font-semibold px-8 py-4"
+                style={showVerificationCard ? {} : blinkStyle}
                 onClick={() => setShowVerificationCard(!showVerificationCard)}
               >
                 Click here to verify this certificate
